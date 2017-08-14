@@ -1,27 +1,54 @@
 <!DOCTYPE HTML>
 <html>
+<link rel="stylesheet" type="text/css" href="style.css" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <body>
+	<header>
+		<div class="logo"><img src="images/stem_logo.svg"></div>
+		<div class="logo"><img src="images/ext_logo.svg"></div>
+	</header>
+	<div class="wrapper"></div>
 
     <script type="text/javascript">
+		
+				getRequest('308514', "hey");
 				
-				getRequest('308514');
+				getRequest('317196', "Coolation Nebraska for manufacturing and assembly");
+				getRequest('317197');	
+				                     
+				getRequest('317207');
+			  getRequest('317208');
+				getRequest('317209');
+					                     
 				getRequest('315093');
 				getRequest('315095');
-			 
-			 function getRequest(channelNumber){
-         var requestURL = "https://api.thingspeak.com/channels/" +channelNumber +"/fields/1.json?results=1"
+				getRequest('315097');
+				getRequest('315099');
+			                       
+			 function getRequest(channelNumber, title){
+				 title = title || "Title #";
+         var requestURL = "https://api.thingspeak.com/channels/" +channelNumber +"/fields/1.json?results=1";
 				 
 				 var el = document.createElement('div');
-				 el.setAttribute("id", channelNumber);
+				 el.setAttribute("id", "count_" + channelNumber);
 				 el.classList.add('count');
-				 el.textContent = "Waiting for data...";
-				 document.body.appendChild(el);
+				 document.querySelector(".wrapper").appendChild(el);
+				 
+				 var ph = document.createElement('h2');
+				 ph.classList.add('title');
+				 ph.innerHTML = title;
+				 el.appendChild(ph);
+				 
+				 var counter = document.createElement('p');
+				 counter.classList.add('counter');
+				 counter.textContent = "...";
+				 el.appendChild(counter);
 
 				 window.setInterval(function() {
           $.getJSON(requestURL, function(json) {
 						if(json.feeds[0]){
-            	el.innerHTML = json.feeds[0]['entry_id'];
+							el.classList.add('active');
+            	counter.innerHTML = json.feeds[0]['entry_id'];
 					 }
           });                        
      	 	}, 10000);
