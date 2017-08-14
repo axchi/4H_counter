@@ -11,23 +11,38 @@
 	<div class="wrapper"></div>
 
     <script type="text/javascript">
-		
-				getRequest('308514', "hey");
-				
-				getRequest('317196', "Coolation Nebraska for manufacturing and assembly");
-				getRequest('317197');	
-				                     
-				getRequest('317207');
-			  getRequest('317208');
-				getRequest('317209');
-					                     
+
+// *********************BUTTON NAME and ID CHANGING************  
+	//1. Place the title  in "" after the six digit number looks like this: getRequest('XXXXXX', "Title Name");
+	//2. Comment out the button if you are not using it by placing two // infront of "getRequest(blah blah);
+	
+			//Button1
+				getRequest('308514',);
+			//Button2
 				getRequest('315093');
-				getRequest('315095');
+			//Button3
+				getRequest('315095');		
+			//Button4
 				getRequest('315097');
-				getRequest('315099');
-			                       
+			//Button5
+				getRequest('315099');	
+			//Button6
+				getRequest('317207');
+			//Button7	                     
+				getRequest('317196', "Coolation Nebraska for manufacturing and assembly");					
+			//Button8
+				getRequest('317197');
+			//Button9
+				getRequest('317208');
+			//Button10
+				getRequest('317209');
+				
+	        //autoMAGIcCally changes the names the ones that don't have a given title above
 			 function getRequest(channelNumber, title){
-				 title = title || "Title #";
+				 title = title || "Title #";     						 
+//**********************End button Naming Code****************************
+
+//Code bellow makes it all work like MAGIC					 
          var requestURL = "https://api.thingspeak.com/channels/" +channelNumber +"/fields/1.json?results=1";
 				 
 				 var el = document.createElement('div');
