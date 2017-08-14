@@ -7,7 +7,9 @@
 		<div class="logo"><img src="images/stem_logo.svg"></div>
 		<div class="logo"><img src="images/ext_logo.svg"></div>
 	</header>
-	<h1>Activity Button Data</h1>
+	
+	<!-- <Change this to Title of Page -->
+	<h1>Activity Button Data</h1>  
 	<div class="wrapper"></div>
 
     <script type="text/javascript">
@@ -37,10 +39,10 @@
 			//Button10
 				getRequest('317209');
 				
-	        //autoMAGIcCally changes the names the ones that don't have a given title above
+	        //autoMAGICally changes the names the ones that don't have a given title above
 			 function getRequest(channelNumber, title){
 				 title = title || "Title #";     						 
-//**********************End button Naming Code****************************
+//**********************End Button Naming Code****************************
 
 //Code bellow makes it all work like MAGIC					 
          var requestURL = "https://api.thingspeak.com/channels/" +channelNumber +"/fields/1.json?results=1";
