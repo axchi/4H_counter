@@ -15,29 +15,31 @@
     <script type="text/javascript">
 
 // *********************BUTTON NAME and ID CHANGING************  
-	//1. Place the title  in "" after the six digit number looks like this: getRequest('XXXXXX', "Title Name");
+	//1. Place the title  in "" after the six digit number looks like this: getRequest('XXnumberXX', "Title Name");
 	//2. Comment out the button if you are not using it by placing two // infront of "getRequest(blah blah);
 	
 			//Button1
-				getRequest('308514',);
+				getRequest('308514', "State Museum of Natural History");
 			//Button2
-				getRequest('315093');
+				getRequest('315093', "College of Science and Natural Resources");
 			//Button3
-				getRequest('315095');		
+				getRequest('315095', "NCTA");		
 			//Button4
-				getRequest('315097');
+				getRequest('315097', "UNL Food Science");
 			//Button5
-				getRequest('315099');	
+				getRequest('315099', "Nebraska 4-H: Legos");	
 			//Button6
-				getRequest('317207');
+				getRequest('317207', "Nebraska 4-H: WearTec Bows");
 			//Button7	                     
-				getRequest('317196', "Coolation Nebraska for manufacturing and assembly");					
+				getRequest('317196', "Nebraska 4-H: Marble Machine");					
 			//Button8
-				getRequest('317197');
+				getRequest('317197', "Nebraska Dept of Natural Resources");
 			//Button9
-				getRequest('317208');
+				//getRequest('317208');
 			//Button10
-				getRequest('317209');
+				//getRequest('317209');
+			//Total of all buttons
+				getRequest('308676', "Total");
 				
 	        //autoMAGICally changes the names the ones that don't have a given title above
 			 function getRequest(channelNumber, title){
@@ -69,7 +71,7 @@
             	counter.innerHTML = json.feeds[0]['entry_id'];
 					 }
           });                        
-     	 	}, 10000);
+     	 	}, 15000);
 			 	
 			 }
     </script>
